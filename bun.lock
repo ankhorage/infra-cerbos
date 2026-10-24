@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "@ankhorage/cerbos",
+      "name": "@ankhorage/infra-cerbos",
       "dependencies": {
         "@ankhorage/contracts": "^17.0.0",
       },
