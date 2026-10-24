@@ -1,5 +1,5 @@
 {
-  "name": "@ankhorage/cerbos",
+  "name": "@ankhorage/infra-cerbos",
   "version": "0.2.0",
   "description": "Cerbos authorization service adapter for provider-neutral Ankhorage infrastructure.",
   "type": "module",
@@ -9,11 +9,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ankhorage/cerbos.git"
+    "url": "git+https://github.com/ankhorage/infra-cerbos.git"
   },
-  "homepage": "https://github.com/ankhorage/cerbos#readme",
+  "homepage": "https://github.com/ankhorage/infra-cerbos#readme",
   "bugs": {
-    "url": "https://github.com/ankhorage/cerbos/issues"
+    "url": "https://github.com/ankhorage/infra-cerbos/issues"
   },
   "keywords": [
     "ankhorage",
@@ -60,7 +60,7 @@
   "devDependencies": {
     "@ankhorage/devtools": "^1.14.6",
     "@ankhorage/paradox": "^0.1.24",
-    "@types/bun": "^1.4.1",
+    "@types/bun": "^1.4.2",
     "@types/node": "^26.4.1",
     "typescript": "~6.0.3"
   },

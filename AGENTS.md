@@ -4,7 +4,7 @@
 
 ## Repository
 
-Package: `@ankhorage/cerbos`
+Package: `@ankhorage/infra-cerbos`
 
 Cerbos authorization service adapter for provider-neutral Ankhorage infrastructure.
 
