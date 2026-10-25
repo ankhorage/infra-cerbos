@@ -1,7 +1,7 @@
 import type { InfraExecutionContext } from '@ankhorage/contracts/infra';
 import { expect, it } from 'bun:test';
 
-import { createInfraAdapter } from './index';
+import { createInfraAdapter } from './index.js';
 
 it('contributes one deterministic runtime-neutral Cerbos workload', async () => {
   const adapter = createInfraAdapter();
@@ -16,22 +16,16 @@ it('contributes one deterministic runtime-neutral Cerbos workload', async () => 
       id: 'cerbos',
       artifact: { kind: 'image', image: 'ghcr.io/cerbos/cerbos:0.40.0' },
       args: ['server', '--config=/config/config.yaml'],
-      ports: [
-        { name: 'http', port: 3592 },
-        { name: 'grpc', port: 3593 },
-      ],
-      files: [
-        {
-          path: '/config/config.yaml',
-          content: {
-            kind: 'literal',
-            value:
-              'server:\n  httpListenAddr: ":3592"\n  grpcListenAddr: ":3593"\nstorage:\n  driver: "disk"\n  disk:\n    directory: /policies\n',
-          },
+      ports: { http: { port: 3592 }, grpc: { port: 3593 } },
+      files: {
+        '/config/config.yaml': {
+          kind: 'literal',
+          value:
+            'server:\n  httpListenAddr: ":3592"\n  grpcListenAddr: ":3593"\nstorage:\n  driver: "disk"\n  disk:\n    directory: /policies\n',
         },
-        { path: '/policies/a.yaml', content: { kind: 'literal', value: 'policy-a' } },
-        { path: '/policies/z.yaml', content: { kind: 'literal', value: 'policy-z' } },
-      ],
+        '/policies/a.yaml': { kind: 'literal', value: 'policy-a' },
+        '/policies/z.yaml': { kind: 'literal', value: 'policy-z' },
+      },
       health: {
         kind: 'command',
         command: ['/cerbos', 'healthcheck', '--config=/config/config.yaml'],
@@ -74,7 +68,9 @@ it('tracks a logical owner and exposes only the non-secret in-network endpoint',
       schemaVersion: 1,
       projectId: 'sample',
       environment: 'local',
+      targets: [],
       resources: reconciled.value.resources,
+      outputs: reconciled.value.outputs,
       artifacts: [],
     },
   };
@@ -116,13 +112,14 @@ function createContext(): InfraExecutionContext {
       authz: {
         provider: 'cerbos',
         kind: 'ABAC',
-        policies: [
-          { path: 'z.yaml', content: 'policy-z' },
-          { path: 'a.yaml', content: 'policy-a' },
-        ],
+        policies: { 'z.yaml': 'policy-z', 'a.yaml': 'policy-a' },
       },
     },
-    credentials: { resolveAsync: () => Promise.resolve({ ok: true, value: {}, diagnostics: [] }) },
+    credentials: {
+      findAsync: () => Promise.resolve({ ok: true, value: null, diagnostics: [] }),
+      resolveAsync: () => Promise.resolve({ ok: true, value: {}, diagnostics: [] }),
+      persistAsync: () => Promise.resolve({ ok: true, value: null, diagnostics: [] }),
+    },
     secrets: { resolveAsync: () => Promise.resolve({ ok: true, value: '', diagnostics: [] }) },
   };
 }
