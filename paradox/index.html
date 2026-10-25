@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>@ankhorage/cerbos • Paradox</title>
+    <title>@ankhorage/infra-cerbos • Paradox</title>
     <style>
       :root {
         color-scheme: light;
@@ -184,7 +184,7 @@
     <div class="layout">
       <aside class="sidebar">
         <p class="muted">Generated with Paradox</p>
-        <h1>@ankhorage/cerbos</h1>
+        <h1>@ankhorage/infra-cerbos</h1>
         <p>Cerbos authorization service adapter for provider-neutral Ankhorage infrastructure.</p>
         <input id="search" class="search" type="search" placeholder="Search current view" />
         <nav aria-label="Documentation sections">
@@ -252,10 +252,10 @@
 
           <section class="panel">
             <h2>Modules</h2>
-            <article class="item" data-search="examples/basic-usage/index.ts">
+            <article class="item" data-search="examples/basic-usage/index.ts dist/index.d.ts">
               <h3>examples/basic-usage/index.ts</h3>
               <p class="muted">Referenced module</p>
-              <p><strong>Dependencies:</strong> <span class="empty">None</span></p>
+              <p><strong>Dependencies:</strong> <code>dist/index.d.ts</code></p>
               <p><strong>Exports:</strong> <span class="empty">None</span></p>
             </article>
             <article class="item" data-search="src/cerbosLifecycle.test.ts src/index.ts">
@@ -387,24 +387,25 @@
               <h3>Architecture overview</h3>
               <p class="muted"><code>diagrams/architecture-overview.mmd</code></p>
               <div class="mermaid">
-                graph TD package__ankhorage_cerbos[&quot;@ankhorage/cerbos&quot;]
-                entrypoint_src_index_ts[&quot;src/index.ts&quot;] package__ankhorage_cerbos --&gt;
-                entrypoint_src_index_ts
+                graph TD package__ankhorage_infra_cerbos[&quot;@ankhorage/infra-cerbos&quot;]
+                entrypoint_src_index_ts[&quot;src/index.ts&quot;] package__ankhorage_infra_cerbos
+                --&gt; entrypoint_src_index_ts
                 module_examples_basic_usage_index_ts[&quot;examples/basic-usage/index.ts&quot;]
-                package__ankhorage_cerbos -.-&gt; module_examples_basic_usage_index_ts
+                package__ankhorage_infra_cerbos -.-&gt; module_examples_basic_usage_index_ts
+                module_examples_basic_usage_index_ts --&gt; module_dist_index_d_ts
                 module_src_cerbosLifecycle_test_ts[&quot;src/cerbosLifecycle.test.ts&quot;]
-                package__ankhorage_cerbos -.-&gt; module_src_cerbosLifecycle_test_ts
+                package__ankhorage_infra_cerbos -.-&gt; module_src_cerbosLifecycle_test_ts
                 module_src_cerbosLifecycle_test_ts --&gt; module_src_index_ts
                 module_src_constants_infra_ts[&quot;src/constants/infra.ts&quot;]
-                package__ankhorage_cerbos -.-&gt; module_src_constants_infra_ts
+                package__ankhorage_infra_cerbos -.-&gt; module_src_constants_infra_ts
                 module_src_features_authorization_infrastructure_application_cerbosLifecycle_ts[&quot;src/features/authorization-infrastructure/application/cerbosLifecycle.ts&quot;]
-                package__ankhorage_cerbos -.-&gt;
+                package__ankhorage_infra_cerbos -.-&gt;
                 module_src_features_authorization_infrastructure_application_cerbosLifecycle_ts
                 module_src_features_authorization_infrastructure_application_createCerbosWorkload_ts[&quot;src/features/authorization-infrastructure/application/createCerbosWorkload.ts&quot;]
-                package__ankhorage_cerbos -.-&gt;
+                package__ankhorage_infra_cerbos -.-&gt;
                 module_src_features_authorization_infrastructure_application_createCerbosWorkload_ts
                 module_src_features_authorization_infrastructure_composition_createInfraAdapter_ts[&quot;src/features/authorization-infrastructure/composition/createInfraAdapter.ts&quot;]
-                package__ankhorage_cerbos -.-&gt;
+                package__ankhorage_infra_cerbos -.-&gt;
                 module_src_features_authorization_infrastructure_composition_createInfraAdapter_ts
                 module_src_features_authorization_infrastructure_composition_createInfraAdapter_ts
                 --&gt; module_src_constants_infra_ts
@@ -416,35 +417,36 @@
                 module_src_features_authorization_infrastructure_application_createCerbosWorkload_ts
                 module_src_index_ts[&quot;src/index.ts&quot;]
                 module_src_infraAdapter_test_ts[&quot;src/infraAdapter.test.ts&quot;]
-                package__ankhorage_cerbos -.-&gt; module_src_infraAdapter_test_ts
+                package__ankhorage_infra_cerbos -.-&gt; module_src_infraAdapter_test_ts
                 module_src_infraAdapter_test_ts --&gt; module_src_index_ts
               </div>
               <details>
                 <summary>View Mermaid source</summary>
                 <pre>
 graph TD
-  package__ankhorage_cerbos[&quot;@ankhorage/cerbos&quot;]
+  package__ankhorage_infra_cerbos[&quot;@ankhorage/infra-cerbos&quot;]
   entrypoint_src_index_ts[&quot;src/index.ts&quot;]
-  package__ankhorage_cerbos --&gt; entrypoint_src_index_ts
+  package__ankhorage_infra_cerbos --&gt; entrypoint_src_index_ts
   module_examples_basic_usage_index_ts[&quot;examples/basic-usage/index.ts&quot;]
-  package__ankhorage_cerbos -.-&gt; module_examples_basic_usage_index_ts
+  package__ankhorage_infra_cerbos -.-&gt; module_examples_basic_usage_index_ts
+  module_examples_basic_usage_index_ts --&gt; module_dist_index_d_ts
   module_src_cerbosLifecycle_test_ts[&quot;src/cerbosLifecycle.test.ts&quot;]
-  package__ankhorage_cerbos -.-&gt; module_src_cerbosLifecycle_test_ts
+  package__ankhorage_infra_cerbos -.-&gt; module_src_cerbosLifecycle_test_ts
   module_src_cerbosLifecycle_test_ts --&gt; module_src_index_ts
   module_src_constants_infra_ts[&quot;src/constants/infra.ts&quot;]
-  package__ankhorage_cerbos -.-&gt; module_src_constants_infra_ts
+  package__ankhorage_infra_cerbos -.-&gt; module_src_constants_infra_ts
   module_src_features_authorization_infrastructure_application_cerbosLifecycle_ts[&quot;src/features/authorization-infrastructure/application/cerbosLifecycle.ts&quot;]
-  package__ankhorage_cerbos -.-&gt; module_src_features_authorization_infrastructure_application_cerbosLifecycle_ts
+  package__ankhorage_infra_cerbos -.-&gt; module_src_features_authorization_infrastructure_application_cerbosLifecycle_ts
   module_src_features_authorization_infrastructure_application_createCerbosWorkload_ts[&quot;src/features/authorization-infrastructure/application/createCerbosWorkload.ts&quot;]
-  package__ankhorage_cerbos -.-&gt; module_src_features_authorization_infrastructure_application_createCerbosWorkload_ts
+  package__ankhorage_infra_cerbos -.-&gt; module_src_features_authorization_infrastructure_application_createCerbosWorkload_ts
   module_src_features_authorization_infrastructure_composition_createInfraAdapter_ts[&quot;src/features/authorization-infrastructure/composition/createInfraAdapter.ts&quot;]
-  package__ankhorage_cerbos -.-&gt; module_src_features_authorization_infrastructure_composition_createInfraAdapter_ts
+  package__ankhorage_infra_cerbos -.-&gt; module_src_features_authorization_infrastructure_composition_createInfraAdapter_ts
   module_src_features_authorization_infrastructure_composition_createInfraAdapter_ts --&gt; module_src_constants_infra_ts
   module_src_features_authorization_infrastructure_composition_createInfraAdapter_ts --&gt; module_src_features_authorization_infrastructure_application_cerbosLifecycle_ts
   module_src_features_authorization_infrastructure_composition_createInfraAdapter_ts --&gt; module_src_features_authorization_infrastructure_application_createCerbosWorkload_ts
   module_src_index_ts[&quot;src/index.ts&quot;]
   module_src_infraAdapter_test_ts[&quot;src/infraAdapter.test.ts&quot;]
-  package__ankhorage_cerbos -.-&gt; module_src_infraAdapter_test_ts
+  package__ankhorage_infra_cerbos -.-&gt; module_src_infraAdapter_test_ts
   module_src_infraAdapter_test_ts --&gt; module_src_index_ts
 </pre>
               </details>
@@ -465,6 +467,7 @@ graph TD
                 module_src_features_authorization_infrastructure_composition_createInfraAdapter_ts[&quot;src/features/authorization-infrastructure/composition/createInfraAdapter.ts&quot;]
                 module_src_index_ts[&quot;src/index.ts&quot;]
                 module_src_infraAdapter_test_ts[&quot;src/infraAdapter.test.ts&quot;]
+                module_examples_basic_usage_index_ts --&gt; module_dist_index_d_ts
                 module_src_cerbosLifecycle_test_ts --&gt; module_src_index_ts
                 module_src_features_authorization_infrastructure_composition_createInfraAdapter_ts
                 --&gt; module_src_constants_infra_ts
@@ -488,6 +491,7 @@ graph LR
   module_src_features_authorization_infrastructure_composition_createInfraAdapter_ts[&quot;src/features/authorization-infrastructure/composition/createInfraAdapter.ts&quot;]
   module_src_index_ts[&quot;src/index.ts&quot;]
   module_src_infraAdapter_test_ts[&quot;src/infraAdapter.test.ts&quot;]
+  module_examples_basic_usage_index_ts --&gt; module_dist_index_d_ts
   module_src_cerbosLifecycle_test_ts --&gt; module_src_index_ts
   module_src_features_authorization_infrastructure_composition_createInfraAdapter_ts --&gt; module_src_constants_infra_ts
   module_src_features_authorization_infrastructure_composition_createInfraAdapter_ts --&gt; module_src_features_authorization_infrastructure_application_cerbosLifecycle_ts

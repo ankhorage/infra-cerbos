@@ -1,6 +1,6 @@
 {
-  "packageName": "@ankhorage/cerbos",
-  "packageId": "@ankhorage/cerbos",
+  "packageName": "@ankhorage/infra-cerbos",
+  "packageId": "@ankhorage/infra-cerbos",
   "description": "Cerbos authorization service adapter for provider-neutral Ankhorage infrastructure.",
   "collaborators": null,
   "donation": null,
@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.1.0",
+      "value": "v0.2.2",
       "color": "cb3837"
     },
     {
@@ -71,7 +71,7 @@
     {
       "path": "examples/basic-usage/index.ts",
       "isEntrypoint": false,
-      "dependencies": [],
+      "dependencies": ["dist/index.d.ts"],
       "exports": []
     },
     {
@@ -341,6 +341,11 @@
         "fromPath": "src/infraAdapter.test.ts",
         "toPath": "src/index.ts",
         "sourcePath": "src/infraAdapter.test.ts"
+      },
+      {
+        "fromPath": "examples/basic-usage/index.ts",
+        "toPath": "dist/index.d.ts",
+        "sourcePath": "examples/basic-usage/index.ts"
       },
       {
         "fromPath": "src/features/authorization-infrastructure/composition/createInfraAdapter.ts",

@@ -1,5 +1,11 @@
 # @ankhorage/cerbos
 
+## 0.2.2
+
+### Patch Changes
+
+- 7205c64: Publish releases through npm Trusted Publishing instead of a bootstrap token.
+
 ## 0.2.1
 
 ### Patch Changes
