@@ -1,7 +1,7 @@
 import { INFRA_ADAPTER_CATALOG, isInfraAdapterDescriptor } from '@ankhorage/contracts/infra';
 import { describe, expect, it } from 'bun:test';
 
-import { createInfraAdapter, infraAdapterDescriptor } from './index';
+import { createInfraAdapter, infraAdapterDescriptor } from './index.js';
 
 describe('Cerbos authorization adapter foundation', () => {
   it('exports the exact Contracts catalog descriptor', () => {

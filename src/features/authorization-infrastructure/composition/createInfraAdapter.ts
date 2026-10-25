@@ -1,14 +1,14 @@
 import type { InfraServiceAdapter } from '@ankhorage/contracts/infra';
 
-import { infraAdapterDescriptor } from '../../../constants/infra';
+import { infraAdapterDescriptor } from '../../../constants/infra.js';
 import {
   destroyCerbos,
   getCerbosStatus,
   planCerbos,
   reconcileCerbos,
   validateCerbos,
-} from '../application/cerbosLifecycle';
-import { createCerbosWorkload } from '../application/createCerbosWorkload';
+} from '../application/cerbosLifecycle.js';
+import { createCerbosWorkload } from '../application/createCerbosWorkload.js';
 
 /***
  * Create the canonical runtime-neutral Cerbos authorization adapter.
