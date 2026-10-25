@@ -1,5 +1,11 @@
 # @ankhorage/cerbos
 
+## 0.2.3
+
+### Patch Changes
+
+- 9945378: Migrate the Cerbos adapter to the canonical Contracts 26 infrastructure descriptors and native Node ESM output.
+
 ## 0.2.2
 
 ### Patch Changes

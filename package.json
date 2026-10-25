@@ -1,6 +1,6 @@
 {
   "name": "@ankhorage/infra-cerbos",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Cerbos authorization service adapter for provider-neutral Ankhorage infrastructure.",
   "type": "module",
   "main": "./dist/index.js",

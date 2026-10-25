@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.2.2",
+      "value": "v0.2.3",
       "color": "cb3837"
     },
     {
@@ -179,7 +179,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/cerbosLifecycle.test.ts",
-        "line": 107,
+        "line": 103,
         "column": 1
       }
     },
@@ -188,7 +188,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/cerbosLifecycle.test.ts",
-        "line": 130,
+        "line": 127,
         "column": 1
       }
     },
@@ -296,7 +296,7 @@
       "description": null,
       "sourceLocation": {
         "filePath": "src/features/authorization-infrastructure/application/createCerbosWorkload.ts",
-        "line": 13,
+        "line": 17,
         "column": 1
       }
     },
