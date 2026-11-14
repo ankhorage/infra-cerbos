@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "kind": "adapter",
+  "title": "Ankhorage Cerbos Infrastructure",
+  "summary": "Provides a runtime-neutral Cerbos authorization service adapter as portable workload and policy intent.",
+  "purpose": "Represent Cerbos authorization infrastructure without embedding Kubernetes- or Compose-specific materialization.",
+  "domain": "authorization service infrastructure",
+  "responsibilities": [
+    "Contribute the Cerbos service workload to provider-neutral infrastructure desired state.",
+    "Package Cerbos policy files for runtime materialization.",
+    "Return the common infrastructure service adapter boundary."
+  ],
+  "boundaries": [
+    "Does not define portable infrastructure contracts.",
+    "Does not evaluate application authorization decisions.",
+    "Does not contain Kubernetes- or Docker Compose-specific deployment branches."
+  ],
+  "audience": [
+    "Infrastructure composition selecting Cerbos as an authorization service.",
+    "Runtimes that materialize portable service workloads and policy files."
+  ],
+  "useCases": [
+    "Add a Cerbos authorization service to portable infrastructure intent.",
+    "Deliver Cerbos policy files to the selected runtime.",
+    "Compose Cerbos independently of the concrete runtime provider."
+  ],
+  "architecture": {
+    "role": "A runtime-neutral service adapter contributing Cerbos workload and policy artifacts.",
+    "invariants": [
+      "Runtime-specific materialization belongs to the selected runtime adapter.",
+      "Cerbos policy artifacts remain explicit portable inputs.",
+      "The adapter exposes only the provider-neutral service boundary."
+    ]
+  },
+  "implements": [
+    {
+      "packageName": "@ankhorage/contracts",
+      "subpath": "./infra",
+      "interfaceId": "InfraServiceAdapter"
+    }
+  ],
+  "constraints": {
+    "limitations": [
+      "Application-level authorization calls and policy authoring workflows remain outside this package."
+    ]
+  }
+}
