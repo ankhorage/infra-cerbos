@@ -14,7 +14,7 @@
     {
       "id": "npm",
       "label": "npm",
-      "value": "v0.2.3",
+      "value": "v0.2.4",
       "color": "cb3837"
     },
     {
@@ -50,8 +50,8 @@
     {
       "id": "tests",
       "label": "tests",
-      "value": "checked",
-      "color": "0a7f3f"
+      "value": "configured",
+      "color": "6f42c1"
     },
     {
       "id": "docs",
@@ -66,25 +66,33 @@
   "readmeCli": null,
   "readmeConfig": null,
   "config": null,
-  "entrypoints": ["src/index.ts"],
+  "entrypoints": [
+    "src/index.ts"
+  ],
   "modules": [
     {
       "path": "examples/basic-usage/index.ts",
       "isEntrypoint": false,
-      "dependencies": ["dist/index.d.ts"],
+      "dependencies": [
+        "dist/index.d.ts"
+      ],
       "exports": []
     },
     {
       "path": "src/cerbosLifecycle.test.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/index.ts"],
+      "dependencies": [
+        "src/index.ts"
+      ],
       "exports": []
     },
     {
       "path": "src/constants/infra.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["infraAdapterDescriptor"]
+      "exports": [
+        "infraAdapterDescriptor"
+      ]
     },
     {
       "path": "src/features/authorization-infrastructure/application/cerbosLifecycle.ts",
@@ -102,7 +110,9 @@
       "path": "src/features/authorization-infrastructure/application/createCerbosWorkload.ts",
       "isEntrypoint": false,
       "dependencies": [],
-      "exports": ["createCerbosWorkload"]
+      "exports": [
+        "createCerbosWorkload"
+      ]
     },
     {
       "path": "src/features/authorization-infrastructure/composition/createInfraAdapter.ts",
@@ -112,18 +122,25 @@
         "src/features/authorization-infrastructure/application/cerbosLifecycle.ts",
         "src/features/authorization-infrastructure/application/createCerbosWorkload.ts"
       ],
-      "exports": ["createInfraAdapter"]
+      "exports": [
+        "createInfraAdapter"
+      ]
     },
     {
       "path": "src/index.ts",
       "isEntrypoint": true,
       "dependencies": [],
-      "exports": ["createInfraAdapter", "infraAdapterDescriptor"]
+      "exports": [
+        "createInfraAdapter",
+        "infraAdapterDescriptor"
+      ]
     },
     {
       "path": "src/infraAdapter.test.ts",
       "isEntrypoint": false,
-      "dependencies": ["src/index.ts"],
+      "dependencies": [
+        "src/index.ts"
+      ],
       "exports": []
     }
   ],
@@ -140,7 +157,9 @@
         "line": 21,
         "column": 1
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [
         {
@@ -165,7 +184,9 @@
         "line": 5,
         "column": 14
       },
-      "exportPaths": ["src/index.ts"],
+      "exportPaths": [
+        "src/index.ts"
+      ],
       "relatedSymbols": [],
       "signatures": [],
       "members": [],

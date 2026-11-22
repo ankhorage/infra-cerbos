@@ -1,5 +1,11 @@
 # @ankhorage/cerbos
 
+## 0.2.4
+
+### Patch Changes
+
+- 5d8841e: Replace legacy PKGViz CI wiring with the canonical Devtools impact workflow and update Ankhorage dependencies.
+
 ## 0.2.3
 
 ### Patch Changes
